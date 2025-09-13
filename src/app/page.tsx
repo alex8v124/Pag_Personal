@@ -10,7 +10,8 @@ import {
   MapPin,
   Briefcase,
   GraduationCap,
-  PencilRuler
+  Code,
+  Sparkles
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -18,14 +19,13 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ProfilePictureGenerator } from "@/components/profile-picture-generator";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const personalInfo = {
   name: "Juan Alexander Miranda Quispe",
@@ -74,6 +74,12 @@ const skills = [
     { category: "Idiomas", items: ["Inglés intermedio (B1)"] },
 ];
 
+const AnimatedCard = ({ children, className, delay = 0 }: { children: React.ReactNode, className?: string, delay?: number }) => (
+  <Card className={`shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-in-up ${className}`} style={{ animationDelay: `${delay}ms` }}>
+    {children}
+  </Card>
+);
+
 export default function PersonalShowcasePage() {
   const [profilePictureUrl, setProfilePictureUrl] = useState<string>("");
 
@@ -84,121 +90,108 @@ export default function PersonalShowcasePage() {
     }
   }, []);
 
-  const handleImageGenerated = (newUrl: string) => {
-    setProfilePictureUrl(newUrl);
-  };
-
   return (
-    <div className="min-h-screen bg-background text-foreground font-body">
+    <div className="min-h-screen bg-gradient-to-br from-background to-secondary text-foreground font-body">
+      <Header />
       <main className="container mx-auto max-w-7xl p-4 sm:p-6 md:p-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          <aside className="lg:col-span-4 xl:col-span-3">
-            <Card className="sticky top-8 shadow-sm">
-              <CardHeader className="items-center text-center">
-                <Avatar className="w-32 h-32 mb-4 border-4 border-card">
-                  <AvatarImage src={profilePictureUrl} alt={personalInfo.name} data-ai-hint="professional portrait" />
-                  <AvatarFallback>{personalInfo.name.slice(0, 2)}</AvatarFallback>
-                </Avatar>
-                <ProfilePictureGenerator onImageGenerated={handleImageGenerated}>
-                  <Button variant="outline" size="sm" className="transition-all hover:bg-accent hover:text-accent-foreground">
-                    <PencilRuler className="mr-2 h-4 w-4" />
-                    Generate Picture
-                  </Button>
-                </ProfilePictureGenerator>
-                <CardTitle className="text-2xl pt-4">{personalInfo.name}</CardTitle>
-                <CardDescription className="text-base text-muted-foreground">{personalInfo.title}</CardDescription>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <Separator className="my-4" />
-                <div className="space-y-3">
-                    <p className="flex items-start"><MapPin className="w-4 h-4 mr-3 mt-1 shrink-0 text-accent" /><span>{personalInfo.location}</span></p>
-                    <a href={`mailto:${personalInfo.email}`} className="flex items-center transition-colors text-muted-foreground hover:text-foreground"><Mail className="w-4 h-4 mr-3 shrink-0 text-accent"/>{personalInfo.email}</a>
-                    <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} className="flex items-center transition-colors text-muted-foreground hover:text-foreground"><Phone className="w-4 h-4 mr-3 shrink-0 text-accent"/>{personalInfo.phone}</a>
-                </div>
-              </CardContent>
-              <CardFooter className="justify-center gap-2">
-                <Button variant="outline" size="icon" asChild>
-                  <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transition-colors hover:bg-accent hover:text-accent-foreground">
-                    <Github />
+        
+        <section id="hero" className="text-center py-20 animate-slide-in-up">
+            <Avatar className="w-40 h-40 mb-6 mx-auto border-8 border-card shadow-lg">
+                <AvatarImage src={profilePictureUrl} alt={personalInfo.name} data-ai-hint="professional portrait" />
+                <AvatarFallback>{personalInfo.name.slice(0, 2)}</AvatarFallback>
+            </Avatar>
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary animated-gradient">{personalInfo.name}</h1>
+            <p className="mt-4 text-lg md:text-xl text-muted-foreground">{personalInfo.title}</p>
+            <p className="mt-2 text-md text-muted-foreground max-w-2xl mx-auto">{personalInfo.subtitle}</p>
+            <div className="mt-8 flex justify-center gap-4">
+                <Button asChild>
+                  <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <Github /> GitHub
                   </a>
                 </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-colors hover:bg-accent hover:text-accent-foreground">
-                    <Linkedin />
+                <Button variant="outline" asChild>
+                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <Linkedin /> LinkedIn
                   </a>
                 </Button>
-              </CardFooter>
-            </Card>
-          </aside>
-          
-          <div className="lg:col-span-8 xl:col-span-9 space-y-8">
-            <Card className="shadow-sm">
+            </div>
+        </section>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-1 space-y-8">
+            <AnimatedCard delay={200}>
               <CardHeader>
-                <CardTitle>Perfil Profesional</CardTitle>
+                <CardTitle>Contacto</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-4">
+                <p className="flex items-start"><MapPin className="w-4 h-4 mr-3 mt-1 shrink-0 text-primary" /><span>{personalInfo.location}</span></p>
+                <a href={`mailto:${personalInfo.email}`} className="flex items-center transition-colors hover:text-primary"><Mail className="w-4 h-4 mr-3 shrink-0 text-primary"/>{personalInfo.email}</a>
+                <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} className="flex items-center transition-colors hover:text-primary"><Phone className="w-4 h-4 mr-3 shrink-0 text-primary"/>{personalInfo.phone}</a>
+              </CardContent>
+            </AnimatedCard>
+             <AnimatedCard delay={300}>
+              <CardHeader>
+                <CardTitle className="flex items-center"><GraduationCap className="mr-3 text-primary"/>Educación</CardTitle>
+              </CardHeader>
+              <CardContent>
+                  <h3 className="font-semibold">{education.institution}</h3>
+                  <p className="text-muted-foreground">{education.degree}</p>
+                  <p className="text-sm text-muted-foreground/80">{education.period}</p>
+              </CardContent>
+            </AnimatedCard>
+          </div>
+          
+          <div className="lg:col-span-2 space-y-8">
+            <AnimatedCard delay={400}>
+              <CardHeader>
+                <CardTitle className="flex items-center"><Sparkles className="mr-3 text-primary"/>Perfil Profesional</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">{personalInfo.profile}</p>
               </CardContent>
-            </Card>
+            </AnimatedCard>
 
-            <Card className="shadow-sm">
+            <AnimatedCard delay={500}>
               <CardHeader>
-                <CardTitle>Experiencia Profesional</CardTitle>
+                <CardTitle className="flex items-center"><Briefcase className="mr-3 text-primary"/>Experiencia Profesional</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {experiences.map((exp, index) => (
                   <div key={index} className="flex gap-4">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-muted shrink-0">
-                      <Briefcase className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
+                    <div className="mt-1">
                       <h3 className="font-semibold text-lg">{exp.role}</h3>
                       <p className="text-muted-foreground">{exp.company} - <span className="italic">{exp.type}</span></p>
                       <p className="text-sm text-muted-foreground/80 mb-2">{exp.period}</p>
                       <p className="text-sm text-muted-foreground leading-snug">{exp.description}</p>
+                      {index < experiences.length - 1 && <Separator className="mt-6" />}
                     </div>
                   </div>
                 ))}
               </CardContent>
-            </Card>
-
-            <Card className="shadow-sm">
-              <CardHeader>
-                <CardTitle>Educación</CardTitle>
-              </CardHeader>
-              <CardContent className="flex gap-4">
-                 <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-muted shrink-0">
-                    <GraduationCap className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{education.institution}</h3>
-                    <p className="text-muted-foreground">{education.degree}</p>
-                    <p className="text-sm text-muted-foreground/80">{education.period}</p>
-                  </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-sm">
-              <CardHeader>
-                <CardTitle>Habilidades Técnicas</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {skills.map((skillCategory, index) => (
-                  <div key={index}>
-                    <h4 className="font-medium mb-2">{skillCategory.category}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skillCategory.items.map((item, itemIndex) => (
-                        <Badge key={itemIndex} variant="secondary">{item}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+            </AnimatedCard>
           </div>
         </div>
+        
+        <AnimatedCard className="mt-8" delay={600}>
+          <CardHeader>
+            <CardTitle className="flex items-center"><Code className="mr-3 text-primary"/>Habilidades Técnicas</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {skills.map((skillCategory, index) => (
+              <div key={index}>
+                <h4 className="font-semibold mb-3 text-md text-foreground">{skillCategory.category}</h4>
+                <div className="flex flex-wrap gap-3">
+                  {skillCategory.items.map((item, itemIndex) => (
+                    <Badge key={itemIndex} variant="secondary" className="text-sm font-normal py-1 px-3 rounded-full transition-transform hover:scale-105">{item}</Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </AnimatedCard>
+
       </main>
+      <Footer />
     </div>
   );
 }

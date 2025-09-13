@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Personal Showcase | Juan Alexander Miranda Quispe',
-  description: 'Personal portfolio for Juan Alexander Miranda Quispe, student of Systems Engineering and Informatics.',
+  title: 'Portafolio | Juan Alexander Miranda Quispe',
+  description: 'Portafolio personal de Juan Alexander Miranda Quispe, estudiante de Ingeniería de Sistemas e Informática.',
 };
 
 export default function RootLayout({
