@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "profile-picture",
+      "description": "A placeholder for the profile picture",
+      "imageUrl": "https://picsum.photos/seed/alex-quispe/400/400",
+      "imageHint": "professional portrait"
+    }
+  ]
 }
