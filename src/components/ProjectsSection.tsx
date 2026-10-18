@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import Card3D from '@/components/3d/Card3D';
 
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -90,106 +91,105 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with 3D Tilt Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => {
             const CategoryIcon = getCategoryIcon(project.category);
             return (
-              <div
-                key={project.id}
-                className="group bg-zinc-900/60 border border-zinc-800/90 rounded-2xl overflow-hidden backdrop-blur-md shadow-2xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
-              >
-                <div>
-                  {/* Card Header Top */}
-                  <div className="p-6 sm:p-7 pb-4">
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-zinc-800/80 text-amber-300 border border-zinc-700/60">
-                        <CategoryIcon className="w-3.5 h-3.5" />
-                        <span>{project.categoryLabel}</span>
+              <Card3D key={project.id} depth={20} glowColor="rgba(251, 191, 36, 0.2)">
+                <div className="group bg-zinc-900/60 border border-zinc-800/90 rounded-2xl overflow-hidden backdrop-blur-md shadow-2xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between h-full">
+                  <div>
+                    {/* Card Header Top */}
+                    <div className="p-6 sm:p-7 pb-4">
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-zinc-800/80 text-amber-300 border border-zinc-700/60">
+                          <CategoryIcon className="w-3.5 h-3.5" />
+                          <span>{project.categoryLabel}</span>
+                        </div>
+                        <span className="text-xs font-mono text-zinc-500 flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {project.date}
+                        </span>
                       </div>
-                      <span className="text-xs font-mono text-zinc-500 flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {project.date}
-                      </span>
+
+                      <h3 className="text-xl sm:text-2xl font-bold font-headline text-zinc-100 group-hover:text-amber-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-mono text-amber-300/80 mt-1">
+                        {project.subtitle}
+                      </p>
+
+                      <p className="mt-4 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                        {project.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold font-headline text-zinc-100 group-hover:text-amber-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm font-mono text-amber-300/80 mt-1">
-                      {project.subtitle}
-                    </p>
+                    {/* Metrics Box (if available) */}
+                    {project.metrics && (
+                      <div className="px-6 sm:px-7 py-3 grid grid-cols-2 gap-2 bg-zinc-950/40 border-y border-zinc-800/60">
+                        {project.metrics.map((m, idx) => (
+                          <div key={idx} className="flex flex-col">
+                            <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">
+                              {m.label}
+                            </span>
+                            <span className="text-xs sm:text-sm font-bold text-amber-300 font-mono">
+                              {m.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
-                    <p className="mt-4 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Metrics Box (if available) */}
-                  {project.metrics && (
-                    <div className="px-6 sm:px-7 py-3 grid grid-cols-2 gap-2 bg-zinc-950/40 border-y border-zinc-800/60">
-                      {project.metrics.map((m, idx) => (
-                        <div key={idx} className="flex flex-col">
-                          <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">
-                            {m.label}
-                          </span>
-                          <span className="text-xs sm:text-sm font-bold text-amber-300 font-mono">
-                            {m.value}
-                          </span>
+                    {/* Highlights Bullets */}
+                    <div className="p-6 sm:p-7 pt-4 space-y-2.5">
+                      <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block font-semibold">
+                        Características Clave:
+                      </span>
+                      {project.keyHighlights.map((highlight, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300 leading-snug">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-amber-400/90 shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
                         </div>
                       ))}
                     </div>
-                  )}
+                  </div>
 
-                  {/* Highlights Bullets */}
-                  <div className="p-6 sm:p-7 pt-4 space-y-2.5">
-                    <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block font-semibold">
-                      Características Clave:
-                    </span>
-                    {project.keyHighlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300 leading-snug">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400/90 shrink-0 mt-0.5" />
-                        <span>{highlight}</span>
+                  {/* Card Footer: Tech Stack + Links */}
+                  <div className="p-6 sm:p-7 pt-0">
+                    <div className="pt-4 border-t border-zinc-800/80">
+                      <div className="flex flex-wrap gap-1.5 mb-5">
+                        {project.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800/70 border border-zinc-700/60 text-zinc-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Card Footer: Tech Stack + Links */}
-                <div className="p-6 sm:p-7 pt-0">
-                  <div className="pt-4 border-t border-zinc-800/80">
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800/70 border border-zinc-700/60 text-zinc-300"
+                      <div className="flex items-center gap-3">
+                        <Button
+                          asChild
+                          size="sm"
+                          className="w-full bg-zinc-800 hover:bg-amber-400 hover:text-zinc-950 text-zinc-200 border border-zinc-700 font-semibold text-xs transition-colors gap-2"
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <Button
-                        asChild
-                        size="sm"
-                        className="w-full bg-zinc-800 hover:bg-amber-400 hover:text-zinc-950 text-zinc-200 border border-zinc-700 font-semibold text-xs transition-colors gap-2"
-                      >
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Ver código de ${project.title} en GitHub`}
-                        >
-                          <Github className="w-4 h-4" />
-                          <span>Ver Código en GitHub</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 ml-auto opacity-70" />
-                        </a>
-                      </Button>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Ver código de ${project.title} en GitHub`}
+                          >
+                            <Github className="w-4 h-4" />
+                            <span>Ver Código en GitHub</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 ml-auto opacity-70" />
+                          </a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card3D>
             );
           })}
         </div>
