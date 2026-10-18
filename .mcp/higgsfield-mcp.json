@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-server-config.json",
+  "name": "Higgsfield MCP Connector",
+  "description": "Higgsfield AI Image & Video Generation MCP Server for Agents, Claude, Cursor and Antigravity",
+  "homepage": "https://higgsfield.ai/es/mcp",
+  "mcpServers": {
+    "higgsfield": {
+      "url": "https://mcp.higgsfield.ai/mcp",
+      "type": "remote-sse",
+      "description": "30+ generative models for text-to-image, text-to-video and media editing without local GPU requirement"
+    }
+  },
+  "cliCommands": {
+    "installSkills": "npx skills add higgsfield-ai/skills",
+    "installCli": "npm install -g @higgsfield/cli",
+    "login": "higgsfield auth login"
+  }
+}
