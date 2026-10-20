@@ -70,6 +70,8 @@ export default function ProjectsSection() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
+                data-magnetic="true"
+                data-cursor-label={cat.label}
                 className={`px-4 py-2 rounded-full text-xs font-medium font-mono transition-all duration-200 flex items-center gap-2 ${
                   selectedCategory === cat.id
                     ? 'bg-amber-400 text-zinc-950 font-bold shadow-lg shadow-amber-400/20 scale-105'
@@ -172,6 +174,8 @@ export default function ProjectsSection() {
                         <Button
                           asChild
                           size="sm"
+                          data-magnetic="true"
+                          data-cursor-label="GitHub"
                           className="w-full bg-zinc-800 hover:bg-amber-400 hover:text-zinc-950 text-zinc-200 border border-zinc-700 font-semibold text-xs transition-colors gap-2"
                         >
                           <a

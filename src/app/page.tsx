@@ -12,19 +12,30 @@ import InteractiveTerminal from '@/components/InteractiveTerminal';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import BackgroundCanvas3D from '@/components/3d/BackgroundCanvas3D';
+import FloatingTechArtifacts from '@/components/3d/FloatingTechArtifacts';
+import CustomCursor from '@/components/3d/CustomCursor';
+import CompanionBot3D from '@/components/3d/CompanionBot3D';
+import TechMarquee from '@/components/TechMarquee';
 
 export default function PersonalShowcasePage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-amber-400 selection:text-zinc-950 font-body relative overflow-x-hidden">
-      {/* 3D Global Space Parallax Background */}
+      {/* Precision Magnetic Cursor & Cyber Trail */}
+      <CustomCursor />
+
+      {/* 3D Global Space Parallax Background Waves */}
       <BackgroundCanvas3D />
+
+      {/* 3D Ambient Floating Tech Artifacts */}
+      <FloatingTechArtifacts />
 
       {/* Top Navbar */}
       <Navbar />
 
-      {/* Main Sections */}
+      {/* Main Content Sections */}
       <main className="relative z-10">
         <HeroSection />
+        <TechMarquee />
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
@@ -33,6 +44,9 @@ export default function PersonalShowcasePage() {
         <InteractiveTerminal />
         <ContactSection />
       </main>
+
+      {/* Interactive 3D Tech Drone Companion (Nexus-01) */}
+      <CompanionBot3D />
 
       {/* Footer */}
       <Footer />

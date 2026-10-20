@@ -193,6 +193,8 @@ export default function InteractiveTerminal() {
               <button
                 key={btn}
                 onClick={() => handleCommand(btn)}
+                data-magnetic="true"
+                data-cursor-label={`$ ${btn}`}
                 className="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-400 hover:text-amber-300 hover:border-amber-400/40 transition-colors"
               >
                 ${btn}

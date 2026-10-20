@@ -131,6 +131,8 @@ export default function ContactSection() {
                   <Button
                     size="icon"
                     variant="ghost"
+                    data-magnetic="true"
+                    data-cursor-label="Copiar"
                     onClick={handleCopyEmail}
                     className="shrink-0 text-zinc-400 hover:text-white"
                     aria-label="Copiar email"
@@ -159,7 +161,14 @@ export default function ContactSection() {
                       </a>
                     </div>
                   </div>
-                  <Button asChild size="sm" variant="ghost" className="shrink-0 text-emerald-400 hover:text-emerald-300 text-xs gap-1">
+                  <Button
+                    asChild
+                    size="sm"
+                    variant="ghost"
+                    data-magnetic="true"
+                    data-cursor-label="WhatsApp"
+                    className="shrink-0 text-emerald-400 hover:text-emerald-300 text-xs gap-1"
+                  >
                     <a
                       href={`https://wa.me/${PERSONAL_INFO.rawPhone}?text=${encodeURIComponent(
                         'Hola Juan Alexander, vi tu portafolio web y quisiera conversar sobre una oportunidad.'
@@ -193,6 +202,8 @@ export default function ContactSection() {
                   asChild
                   variant="outline"
                   size="sm"
+                  data-magnetic="true"
+                  data-cursor-label="LinkedIn"
                   className="flex-1 bg-zinc-950/60 border-zinc-800 hover:border-blue-400/50 text-zinc-300 hover:text-blue-300 text-xs gap-2"
                 >
                   <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer">
@@ -205,6 +216,8 @@ export default function ContactSection() {
                   asChild
                   variant="outline"
                   size="sm"
+                  data-magnetic="true"
+                  data-cursor-label="GitHub"
                   className="flex-1 bg-zinc-950/60 border-zinc-800 hover:border-zinc-600 text-zinc-300 hover:text-white text-xs gap-2"
                 >
                   <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer">
@@ -283,6 +296,8 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={submitting}
+                data-magnetic="true"
+                data-cursor-label="Enviar"
                 className="w-full bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold text-xs py-3 shadow-lg shadow-amber-400/20 gap-2"
               >
                 {submitting ? (

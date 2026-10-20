@@ -66,6 +66,8 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a
           href="#inicio"
+          data-magnetic="true"
+          data-cursor-label="Inicio"
           className="flex items-center gap-2.5 group focus:outline-none"
           aria-label="Juan Alexander Miranda Quispe"
         >
@@ -93,6 +95,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
+                data-cursor-label={link.label}
                 className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 ${
                   isActive
                     ? 'bg-amber-400 text-zinc-950 shadow-md font-semibold'
@@ -111,6 +114,8 @@ export default function Navbar() {
             asChild
             size="sm"
             variant="outline"
+            data-magnetic="true"
+            data-cursor-label="Descargar"
             className="hidden sm:inline-flex border-zinc-700 hover:border-amber-400/60 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 hover:text-amber-300 text-xs gap-1.5"
           >
             <a href="/cv.pdf" download="CV_Juan_Alexander_Miranda_Quispe.pdf">
@@ -122,6 +127,8 @@ export default function Navbar() {
           <Button
             asChild
             size="sm"
+            data-magnetic="true"
+            data-cursor-label="Contacto"
             className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-semibold text-xs shadow-md shadow-amber-400/20"
           >
             <a href="#contacto">Hablemos</a>

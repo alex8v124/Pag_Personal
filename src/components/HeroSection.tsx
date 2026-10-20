@@ -20,11 +20,13 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import HeroScene4D from '@/components/3d/HeroScene4D';
+import ParticleMorph4D from '@/components/3d/ParticleMorph4D';
 import Card3D from '@/components/3d/Card3D';
 
 export default function HeroSection() {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
+  const [activeVisualizer, setActiveVisualizer] = useState<'morph' | 'tesseract'>('morph');
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -101,7 +103,8 @@ export default function HeroSection() {
               {techBadges.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md bg-zinc-900/80 border border-zinc-800 text-xs font-mono text-zinc-300 hover:border-amber-500/50 hover:text-amber-300 transition-colors shadow-sm"
+                  data-cursor-label={tech}
+                  className="px-2.5 py-1 rounded-md bg-zinc-900/80 border border-zinc-800 text-xs font-mono text-zinc-300 hover:border-amber-500/50 hover:text-amber-300 transition-colors shadow-sm cursor-default"
                 >
                   {tech}
                 </span>
@@ -113,6 +116,8 @@ export default function HeroSection() {
               <Button
                 asChild
                 size="lg"
+                data-magnetic="true"
+                data-cursor-label="Explorar"
                 className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold px-6 shadow-xl shadow-amber-500/25 text-sm gap-2"
               >
                 <a href="#proyectos">
@@ -124,6 +129,8 @@ export default function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
+                data-magnetic="true"
+                data-cursor-label="Copiar"
                 onClick={handleCopyEmail}
                 className="border-zinc-700 hover:border-amber-400/70 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 text-sm gap-2"
               >
@@ -135,6 +142,8 @@ export default function HeroSection() {
                 asChild
                 variant="ghost"
                 size="lg"
+                data-magnetic="true"
+                data-cursor-label="GitHub"
                 className="text-zinc-300 hover:text-white hover:bg-zinc-800/80 border border-zinc-800 text-sm gap-2"
               >
                 <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer">
@@ -147,6 +156,8 @@ export default function HeroSection() {
                 asChild
                 variant="ghost"
                 size="lg"
+                data-magnetic="true"
+                data-cursor-label="LinkedIn"
                 className="text-zinc-300 hover:text-white hover:bg-zinc-800/80 border border-zinc-800 text-sm gap-2"
               >
                 <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer">
@@ -158,8 +169,41 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column: Interactive 4D WebGL Object (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <HeroScene4D />
+          <div className="lg:col-span-5 flex flex-col items-center">
+            {/* Visualizer Mode Switcher */}
+            <div className="mb-3 flex items-center p-1 rounded-xl bg-zinc-900/90 border border-zinc-800 backdrop-blur-md shadow-lg">
+              <button
+                onClick={() => setActiveVisualizer('morph')}
+                data-magnetic="true"
+                data-cursor-label="8K Partículas"
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 flex items-center gap-1.5 ${
+                  activeVisualizer === 'morph'
+                    ? 'bg-amber-400 text-zinc-950 font-bold shadow-md shadow-amber-400/20'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Morphing 4D (8K GPU)</span>
+              </button>
+              <button
+                onClick={() => setActiveVisualizer('tesseract')}
+                data-magnetic="true"
+                data-cursor-label="Hipercubo 4D"
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 flex items-center gap-1.5 ${
+                  activeVisualizer === 'tesseract'
+                    ? 'bg-amber-400 text-zinc-950 font-bold shadow-md shadow-amber-400/20'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <Layers className="w-3.5 h-3.5" />
+                <span>Hipercubo Cuántico</span>
+              </button>
+            </div>
+
+            {/* Visualizer Display */}
+            <div className="w-full flex justify-center">
+              {activeVisualizer === 'morph' ? <ParticleMorph4D /> : <HeroScene4D />}
+            </div>
           </div>
         </div>
 
