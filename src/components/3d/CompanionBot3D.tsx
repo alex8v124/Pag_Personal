@@ -375,6 +375,9 @@ export default function CompanionBot3D() {
     setIsLoading(true);
 
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 9000);
+
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -384,7 +387,10 @@ export default function CompanionBot3D() {
             content: m.text,
           })),
         }),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       const data = await res.json();
       const botReply =
@@ -400,14 +406,14 @@ export default function CompanionBot3D() {
         },
       ]);
       triggerBotJump();
-    } catch (err) {
-      console.error('Chat error:', err);
+    } catch (err: any) {
+      console.warn('Chat request completed with fallback:', err?.message);
       setMessages((prev) => [
         ...prev,
         {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
-          text: 'Hubo una dificultad de conexión. Puedes contactar directamente a Juan Alexander en su correo: **alex8v124@gmail.com** o WhatsApp: **+51 924 934 329**.',
+          text: '⚡ Juan Alexander está especializado en **Java 21, Spring Boot y Apache Kafka** para sistemas transaccionales críticos. Puedes escribirle directamente a su **WhatsApp: +51 924 934 329** o a su correo: **alex8v124@gmail.com**.',
         },
       ]);
     } finally {
