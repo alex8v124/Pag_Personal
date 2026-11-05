@@ -3,6 +3,8 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import HackathonsSection from '@/components/HackathonsSection';
+import NoduxSection from '@/components/NoduxSection';
 import AboutSection from '@/components/AboutSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
@@ -36,6 +38,8 @@ export default function PersonalShowcasePage() {
       <main className="relative z-10">
         <HeroSection />
         <TechMarquee />
+        <HackathonsSection />
+        <NoduxSection />
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />

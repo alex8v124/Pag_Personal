@@ -39,14 +39,14 @@ export default function HeroSection() {
   };
 
   const techBadges = [
+    'AWS Serverless',
     'Java 21',
-    'Spring Boot',
+    'Spring Boot 3',
     'Apache Kafka',
     'Angular 17+',
-    'React',
-    'Microservicios',
-    'PostgreSQL',
-    'MongoDB',
+    'Next.js 15',
+    'Qiskit Aer / QUBO',
+    'Gemini AI',
     'Podman / Docker',
   ];
 
@@ -70,11 +70,11 @@ export default function HeroSection() {
             {/* Availability Pill with pulsing dot */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-700/60 shadow-lg shadow-black/40 mb-6 backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
               </span>
               <span className="text-xs font-mono text-zinc-300">
-                Disponible para Desarrollo Full-Stack &amp; Microservicios
+                CTO &amp; Co-Founder en Nodux &bull; Podio Nacional AWS &amp; Kiro
               </span>
             </div>
 
@@ -87,15 +87,11 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-4 text-lg sm:text-xl font-mono text-amber-300 font-medium">
-              Ingeniero de Sistemas e Informática &bull; Full-Stack Engineer
+              CTO &amp; Co-Founder en Nodux &bull; Full-Stack &amp; Cloud Architect
             </p>
 
             <p className="mt-4 text-sm sm:text-base text-zinc-400 max-w-xl leading-relaxed">
-              Especializado en arquitecturas de microservicios con <strong className="text-zinc-200">Java 21</strong>,{' '}
-              <strong className="text-zinc-200">Spring Boot</strong> y <strong className="text-zinc-200">Apache Kafka</strong>,
-              así como en interfaces web reactivas de alto rendimiento con{' '}
-              <strong className="text-zinc-200">Angular 17+</strong> y <strong className="text-zinc-200">React</strong>.
-              Experiencia en modernización tecnológica crítica en el sector bancario.
+              Líder de arquitectura técnica y suites de IA en <strong className="text-zinc-200">Nodux</strong>, con podio nacional en la <strong className="text-amber-300">IAthon AWS &amp; Kiro</strong> y clasificación oficial en el <strong className="text-indigo-300">IEEE/IBM Quantum Hackathon</strong>. Especialista en microservicios transaccionales con <strong className="text-zinc-200">Java 21, Spring Boot y Apache Kafka</strong>, arquitectura Cloud Serverless y aplicaciones web reactivas en <strong className="text-zinc-200">Angular 17+ y Next.js</strong>.
             </p>
 
             {/* Tech Highlights Pills */}

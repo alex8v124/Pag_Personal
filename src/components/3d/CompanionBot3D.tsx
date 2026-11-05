@@ -22,9 +22,9 @@ interface ChatMessage {
 }
 
 const PRESET_QUESTIONS = [
+  '⚡ ¿Cuál es su rol como CTO en Nodux?',
+  '🏆 ¿Qué podios obtuvo en las Hackathons de AWS y Quantum?',
   '☕ ¿Cuál es su experiencia en Java 21 y Kafka?',
-  '🚀 ¿Qué proyectos clave ha desarrollado?',
-  '💼 ¿Está disponible para nuevas oportunidades?',
   '📞 ¿Cómo puedo contactar a Juan directamente?',
 ];
 
@@ -40,7 +40,7 @@ export default function CompanionBot3D() {
     {
       id: 'welcome',
       role: 'assistant',
-      text: '¡Hola! 👋 Soy **Nexus-01**, el dron y copiloto de Inteligencia Artificial de **Juan Alexander Miranda Quispe**, potenciado por **Google Gemini**.\n\nConozco toda su trayectoria en **Java 21, Spring Boot, Apache Kafka, Angular 17+**, sus proyectos transaccionales en el sector bancario (ZyTrust) y disponibilidad laboral. ¿Qué te gustaría consultar sobre él?',
+      text: '¡Hola! 👋 Soy **Nexus-01**, el copiloto IA de **Juan Alexander Miranda Quispe**, **CTO & Co-Founder en NODUX**.\n\nConozco toda su trayectoria liderando arquitectura Cloud Serverless, suites de IA (**PhyData AI, Commercial OS**), computación cuántica (**Nodux Quantum / Qiskit Aer**), sus podios nacionales (**Top 3 en IAthon AWS & Kiro** y **Clasificado en IEEE/IBM Quantum Hackathon**) y su experiencia en el sector bancario (**Java 21, Spring Boot 3, Kafka**). ¿Qué te gustaría consultar sobre él?',
     },
   ]);
 

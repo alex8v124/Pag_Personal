@@ -24,10 +24,10 @@ export default function ProjectsSection() {
 
   const categories = [
     { id: 'all', label: 'Todos', count: PROJECTS.length },
-    { id: 'microservices', label: 'Microservicios & Cloud', count: 1 },
-    { id: 'fullstack', label: 'Full-Stack Enterprise', count: 2 },
-    { id: 'ai', label: 'IA & NLP', count: 1 },
-    { id: 'frontend3d', label: 'Frontend 3D', count: 1 },
+    { id: 'ai', label: 'Cloud, IA & Cuántica', count: PROJECTS.filter((p) => p.category === 'ai').length },
+    { id: 'microservices', label: 'Microservicios', count: PROJECTS.filter((p) => p.category === 'microservices').length },
+    { id: 'fullstack', label: 'Full-Stack Enterprise', count: PROJECTS.filter((p) => p.category === 'fullstack').length },
+    { id: 'frontend3d', label: 'Frontend 3D', count: PROJECTS.filter((p) => p.category === 'frontend3d').length },
   ];
 
   const filteredProjects =
@@ -170,13 +170,38 @@ export default function ProjectsSection() {
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        {project.liveUrl && (
+                          <Button
+                            asChild
+                            size="sm"
+                            data-magnetic="true"
+                            data-cursor-label="Live Demo"
+                            className="flex-1 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold text-xs transition-colors gap-1.5 shadow-md shadow-amber-400/20"
+                          >
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`Ver demo en vivo de ${project.title}`}
+                            >
+                              <ExternalLink className="w-3.5 h-3.5" />
+                              <span>Abrir App</span>
+                              <ArrowUpRight className="w-3.5 h-3.5 ml-auto opacity-70" />
+                            </a>
+                          </Button>
+                        )}
                         <Button
                           asChild
                           size="sm"
+                          variant={project.liveUrl ? "outline" : "default"}
                           data-magnetic="true"
                           data-cursor-label="GitHub"
-                          className="w-full bg-zinc-800 hover:bg-amber-400 hover:text-zinc-950 text-zinc-200 border border-zinc-700 font-semibold text-xs transition-colors gap-2"
+                          className={
+                            project.liveUrl
+                              ? "bg-zinc-900 border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-600 text-xs gap-1.5"
+                              : "w-full bg-zinc-800 hover:bg-amber-400 hover:text-zinc-950 text-zinc-200 border border-zinc-700 font-semibold text-xs transition-colors gap-2"
+                          }
                         >
                           <a
                             href={project.githubUrl}
@@ -185,8 +210,8 @@ export default function ProjectsSection() {
                             aria-label={`Ver código de ${project.title} en GitHub`}
                           >
                             <Github className="w-4 h-4" />
-                            <span>Ver Código en GitHub</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 ml-auto opacity-70" />
+                            <span>{project.liveUrl ? 'Código' : 'Ver Código en GitHub'}</span>
+                            {!project.liveUrl && <ArrowUpRight className="w-3.5 h-3.5 ml-auto opacity-70" />}
                           </a>
                         </Button>
                       </div>

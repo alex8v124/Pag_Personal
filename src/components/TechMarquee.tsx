@@ -12,19 +12,24 @@ import {
   Sparkles,
   GitBranch,
   Database,
+  Trophy,
+  Atom,
+  Building2,
 } from 'lucide-react';
 
 const MARQUEE_ITEMS = [
+  { icon: Building2, label: 'CTO & Co-Founder en Nodux', tag: 'Leadership' },
+  { icon: Trophy, label: 'Top 3 Nacional IAthon AWS & Kiro', tag: 'Podio Nacional' },
+  { icon: Atom, label: 'IEEE / IBM Quantum Hackathon (Qiskit)', tag: 'Quantum' },
   { icon: Cpu, label: 'Java 21 & Virtual Threads', tag: 'Core' },
   { icon: Server, label: 'Spring Boot 3 Microservices', tag: 'Backend' },
   { icon: Zap, label: 'Apache Kafka Event Streaming', tag: 'Messaging' },
-  { icon: Layers, label: 'Angular 17+ Signals & RxJS', tag: 'Frontend' },
-  { icon: Workflow, label: 'Arquitectura Hexagonal & DDD', tag: 'Architecture' },
-  { icon: ShieldCheck, label: 'Banca y Sistemas Críticos', tag: 'Industry' },
-  { icon: Database, label: 'PostgreSQL & MongoDB', tag: 'Databases' },
+  { icon: Zap, label: 'AWS Lambda Serverless & Bedrock', tag: 'Cloud' },
+  { icon: Layers, label: 'Angular 17+ Signals & Next.js 15', tag: 'Frontend' },
+  { icon: Sparkles, label: 'PhyData AI & Commercial OS', tag: 'Suites IA' },
+  { icon: ShieldCheck, label: 'Banca y Sistemas Críticos (ZyTrust)', tag: 'Industry' },
+  { icon: Database, label: 'PostgreSQL, MongoDB & DynamoDB', tag: 'Databases' },
   { icon: GitBranch, label: 'Podman, Docker & CI/CD', tag: 'DevOps' },
-  { icon: Terminal, label: 'Clean Code & SOLID', tag: 'Engineering' },
-  { icon: Sparkles, label: 'Resiliencia & Alta Disponibilidad', tag: 'Enterprise' },
 ];
 
 export default function TechMarquee() {

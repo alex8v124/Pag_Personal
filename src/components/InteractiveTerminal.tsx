@@ -134,6 +134,32 @@ export default function InteractiveTerminal() {
         );
         break;
 
+      case 'nodux':
+        output = (
+          <div className="space-y-1.5 text-xs font-mono text-zinc-300">
+            <p className="text-amber-400 font-bold">🏢 NODUX Tech — CTO &amp; Co-Founder:</p>
+            <p className="text-zinc-300">
+              “Soluciones que se adaptan a ti, tecnología que transforma.” — Consultoría de Operaciones, Ingeniería de Datos, Suites de IA y Desarrollo Web B2B.
+            </p>
+            <p className="text-zinc-400">• <strong className="text-amber-300">PhyData AI:</strong> Ingesta masiva y normalización semántica de hasta 3,000 SKUs con validación Human-in-the-Loop.</p>
+            <p className="text-zinc-400">• <strong className="text-amber-300">Nodux AI &amp; Despacho:</strong> Cotización inmediata por WhatsApp reducida a 10s (Validado en PRODUCE).</p>
+            <p className="text-zinc-400">• <strong className="text-amber-300">Commercial OS:</strong> CRM B2B con motor Gemini, pipeline de 7 fases y simulador FinOps de ROI (+418%).</p>
+            <p className="text-zinc-400">• <strong className="text-amber-300">4 Plataformas Productivas:</strong> E-Commerce, Nodux Educa LMS, Portal NX-7 PHEV y Web B2B.</p>
+          </div>
+        );
+        break;
+
+      case 'hackathons':
+        output = (
+          <div className="space-y-2 text-xs font-mono text-zinc-300">
+            <p className="text-amber-400 font-bold">🏆 Validación en Cancha bajo Presión (Hackathons):</p>
+            <p>• <span className="text-amber-300 font-bold">3.er Puesto Nacional:</span> IAthon AWS &amp; Kiro (ESAN x Fundación Romero) con Kiro RestQube (AWS Lambda + DynamoDB + Bedrock Claude 3 + QUBO) superando a 40 escuadras (240 competidores). Demo: https://kirorestqube.vercel.app/</p>
+            <p>• <span className="text-indigo-300 font-bold">Clasificado Oficial:</span> IEEE / IBM Quantum Hackathon Perú (PUCP x UTEC) con Nodux Quantum: resolución de problema cuadrático QAP10 (4,150 vars) con QAOA/Q-LNS en Qiskit Aer (-27.04% costo). Demo: https://nodux-quantum.vercel.app/</p>
+            <p>• <span className="text-emerald-400 font-bold">1.er Puesto (10/10):</span> Challenge Internacional #AIforImpact (HP &amp; JA Americas).</p>
+          </div>
+        );
+        break;
+
       case 'higgsfield':
         output = (
           <div className="space-y-1.5 text-xs font-mono text-zinc-300">
@@ -169,7 +195,7 @@ export default function InteractiveTerminal() {
     handleCommand(inputVal);
   };
 
-  const presetButtons = ['whoami', 'stack', 'projects', 'contact', 'stats', 'higgsfield', 'clear'];
+  const presetButtons = ['whoami', 'nodux', 'hackathons', 'stack', 'projects', 'contact', 'stats', 'clear'];
 
   return (
     <section id="terminal" className="py-20 px-4 sm:px-6 relative bg-zinc-950/60">

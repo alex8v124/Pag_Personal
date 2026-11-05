@@ -14,6 +14,8 @@ import {
   GraduationCap,
   Mail,
   Sparkles,
+  Award,
+  Building2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -26,7 +28,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['inicio', 'sobre-mi', 'experiencia', 'proyectos', 'habilidades', 'logros', 'terminal', 'contacto'];
+      const sections = ['inicio', 'hackathons', 'nodux', 'sobre-mi', 'experiencia', 'proyectos', 'habilidades', 'logros', 'terminal', 'contacto'];
       const current = sections.find((sec) => {
         const el = document.getElementById(sec);
         if (el) {
@@ -46,11 +48,12 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '#inicio', label: 'Inicio', icon: Sparkles },
+    { href: '#hackathons', label: 'Hackathons', icon: Award },
+    { href: '#nodux', label: 'Nodux', icon: Building2 },
     { href: '#sobre-mi', label: 'Sobre Mí', icon: Code2 },
     { href: '#experiencia', label: 'Experiencia', icon: Briefcase },
     { href: '#proyectos', label: 'Proyectos', icon: Layers },
     { href: '#habilidades', label: 'Habilidades', icon: Terminal },
-    { href: '#logros', label: 'Logros', icon: GraduationCap },
     { href: '#contacto', label: 'Contacto', icon: Mail },
   ];
 

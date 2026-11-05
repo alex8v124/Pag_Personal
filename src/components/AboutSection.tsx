@@ -21,36 +21,36 @@ import Card3D from '@/components/3d/Card3D';
 export default function AboutSection() {
   const highlights = [
     {
-      icon: ShieldCheck,
-      title: 'Sector Bancario & Seguridad',
+      icon: Sparkles,
+      title: 'CTO & Co-Founder en Nodux',
       description:
-        'Desarrollo de servicios backend de alta disponibilidad y portales web en ZyTrust SA para clientes del sector financiero, mitigando vulnerabilidades críticas.',
+        'Lidero la arquitectura de software, suites de IA (PhyData AI, Commercial OS, Despacho Transaccional) y el despliegue de 4 plataformas B2B en producción.',
       color: 'text-amber-400',
-      badge: 'ZyTrust SA',
-    },
-    {
-      icon: Server,
-      title: 'Arquitectura & Microservicios',
-      description:
-        'Diseño desacoplado y orientado a eventos con Apache Kafka, API Gateways perimetrales con JWT y persistencia políglota (PostgreSQL + MongoDB).',
-      color: 'text-blue-400',
-      badge: 'Event-Driven',
+      badge: 'Nodux Tech',
     },
     {
       icon: Award,
-      title: 'Excelencia Académica UTP',
+      title: 'Podios Nacionales & Hackathons',
       description:
-        'Perteneciente al Décimo Superior en Ingeniería de Sistemas e Informática. Finalista en el programa de mérito Generación TOP / Impulsa UTP.',
-      color: 'text-emerald-400',
-      badge: 'Top 10%',
+        'Top 3 Nacional en IAthon AWS & Kiro (de 240 ingenieros) y Clasificado Oficial en IEEE / IBM Quantum Hackathon Perú (algoritmos QAOA/QUBO).',
+      color: 'text-indigo-400',
+      badge: 'Top 3 AWS & IBM',
     },
     {
-      icon: Globe2,
-      title: 'Dominio de Inglés C1 Avanzado',
+      icon: Server,
+      title: 'Sector Bancario & Microservicios',
       description:
-        'Certificación de nivel C1 (Edusoft / UTP), permitiendo una comunicación fluida y redacción técnica precisa en entornos globales y remotos.',
-      color: 'text-purple-400',
-      badge: 'C1 Certified',
+        'Diseño de microservicios resilientes orientados a eventos con Java 21, Spring Boot 3 y Apache Kafka en ZyTrust SA, optimizando latencias en +35%.',
+      color: 'text-blue-400',
+      badge: 'ZyTrust SA',
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Décimo Superior & Inglés C1',
+      description:
+        'Perteneciente al Top 10% (Décimo Superior) en Ingeniería de Sistemas e Informática (UTP) y certificación de inglés avanzado C1 para entornos globales.',
+      color: 'text-emerald-400',
+      badge: 'Top 10% UTP',
     },
   ];
 
