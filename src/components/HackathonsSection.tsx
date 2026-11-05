@@ -5,7 +5,6 @@ import {
   Trophy,
   Atom,
   ArrowUpRight,
-  Sparkles,
   Zap,
   Server,
   Cpu,
@@ -33,7 +32,6 @@ export default function HackathonsSection() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <span className="text-xs sm:text-sm font-mono font-bold tracking-wider text-blue-400 uppercase flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-blue-400" />
                 VALIDACIÓN EN CANCHA BAJO PRESIÓN
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-headline text-zinc-100 tracking-tight mt-2">
@@ -190,32 +188,6 @@ export default function HackathonsSection() {
               </div>
             </div>
           </Card3D>
-        </div>
-
-        {/* Additional Badge Banner: Challenge Internacional HP & JA Americas */}
-        <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
-              <Award className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-xs font-mono font-bold text-emerald-400">
-                  🥇 1.ER PUESTO (10/10)
-                </span>
-                <span className="text-xs text-zinc-500">&bull;</span>
-                <span className="text-xs font-mono text-zinc-300">
-                  Challenge Internacional #AIforImpact — HP &amp; Junior Achievement Americas
-                </span>
-              </div>
-              <p className="text-xs text-zinc-400 mt-0.5">
-                Puntaje perfecto otorgado por el jurado evaluador estructurando modelos de IA responsable y viabilidad comercial.
-              </p>
-            </div>
-          </div>
-          <div className="inline-flex items-center gap-1 text-xs font-mono text-zinc-400 bg-zinc-950/60 px-3 py-1.5 rounded-lg border border-zinc-800 shrink-0">
-            <span>NauFest 2026</span>
-          </div>
         </div>
       </div>
     </section>

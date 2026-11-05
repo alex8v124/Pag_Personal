@@ -247,7 +247,7 @@ export const PROJECTS: Project[] = [
       { label: "Módulo", value: "Data Quality & ML" },
     ],
     githubUrl: "https://github.com/alex8v124",
-    liveUrl: "https://nicolas-links-chi.vercel.app/",
+    liveUrl: "https://nx-profiler-nine.vercel.app/",
     featured: true,
   },
   {
@@ -279,7 +279,7 @@ export const PROJECTS: Project[] = [
       { label: "IA", value: "Motor Gemini" },
     ],
     githubUrl: "https://github.com/alex8v124",
-    liveUrl: "https://nicolas-links-chi.vercel.app/",
+    liveUrl: "https://nx-profiler-nine.vercel.app/",
     featured: true,
   },
   {

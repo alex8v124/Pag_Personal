@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Cpu, Code2, Network, Box, Sparkles, RefreshCw } from 'lucide-react';
+import { Cpu, Code2, Network, Box, Zap, RefreshCw } from 'lucide-react';
 
 const PARTICLE_COUNT = 8000;
 
@@ -458,7 +458,7 @@ export default function ParticleMorph4D() {
 
       {/* Badge label */}
       <div className="absolute top-2 right-4 text-[10px] font-mono text-zinc-400 bg-zinc-900/80 border border-zinc-800 px-2.5 py-1 rounded-md backdrop-blur-md z-20 flex items-center gap-1.5">
-        <Sparkles className="w-3 h-3 text-amber-400 animate-pulse" />
+        <Zap className="w-3 h-3 text-amber-400 animate-pulse" />
         <span>8,000 Partículas 4D &bull; GLSL Shader</span>
       </div>
     </div>

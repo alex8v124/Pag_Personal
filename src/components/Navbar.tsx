@@ -13,7 +13,7 @@ import {
   Layers,
   GraduationCap,
   Mail,
-  Sparkles,
+  Zap,
   Award,
   Building2,
 } from 'lucide-react';
@@ -47,7 +47,7 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '#inicio', label: 'Inicio', icon: Sparkles },
+    { href: '#inicio', label: 'Inicio', icon: Zap },
     { href: '#hackathons', label: 'Hackathons', icon: Award },
     { href: '#nodux', label: 'Nodux', icon: Building2 },
     { href: '#sobre-mi', label: 'Sobre Mí', icon: Code2 },

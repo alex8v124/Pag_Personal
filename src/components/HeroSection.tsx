@@ -10,7 +10,7 @@ import {
   Check,
   ArrowDown,
   Layers,
-  Sparkles,
+  Cpu,
   Server,
   Code2,
   ShieldCheck,
@@ -178,7 +178,7 @@ export default function HeroSection() {
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
-                <Sparkles className="w-3.5 h-3.5" />
+                <Cpu className="w-3.5 h-3.5" />
                 <span>Morphing 4D (8K GPU)</span>
               </button>
               <button

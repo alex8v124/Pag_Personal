@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Sparkles, Rotate3D, Layers, Eye } from 'lucide-react';
+import { Cpu, Rotate3D, Layers, Eye } from 'lucide-react';
 
 type GeometryMode = 'tesseract' | 'torus' | 'icosahedron';
 
@@ -448,7 +448,7 @@ export default function HeroScene4D() {
           }`}
           aria-label="Ver Quantum Torus"
         >
-          <Sparkles className="w-3.5 h-3.5" />
+          <Cpu className="w-3.5 h-3.5" />
           <span>Torus Cuántico</span>
         </button>
 

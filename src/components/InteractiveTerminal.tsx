@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { PERSONAL_INFO, PROJECTS } from '@/data/portfolioData';
-import { Terminal, Send, CornerDownLeft, Sparkles, Copy, Check } from 'lucide-react';
+import { Terminal, Send, CornerDownLeft, Copy, Check } from 'lucide-react';
 
 interface HistoryItem {
   command: string;
@@ -155,7 +155,6 @@ export default function InteractiveTerminal() {
             <p className="text-amber-400 font-bold">🏆 Validación en Cancha bajo Presión (Hackathons):</p>
             <p>• <span className="text-amber-300 font-bold">3.er Puesto Nacional:</span> IAthon AWS &amp; Kiro (ESAN x Fundación Romero) con Kiro RestQube (AWS Lambda + DynamoDB + Bedrock Claude 3 + QUBO) superando a 40 escuadras (240 competidores). Demo: https://kirorestqube.vercel.app/</p>
             <p>• <span className="text-indigo-300 font-bold">Clasificado Oficial:</span> IEEE / IBM Quantum Hackathon Perú (PUCP x UTEC) con Nodux Quantum: resolución de problema cuadrático QAP10 (4,150 vars) con QAOA/Q-LNS en Qiskit Aer (-27.04% costo). Demo: https://nodux-quantum.vercel.app/</p>
-            <p>• <span className="text-emerald-400 font-bold">1.er Puesto (10/10):</span> Challenge Internacional #AIforImpact (HP &amp; JA Americas).</p>
           </div>
         );
         break;

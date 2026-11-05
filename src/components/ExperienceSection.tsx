@@ -8,7 +8,6 @@ import {
   MapPin,
   CheckCircle2,
   Building2,
-  Sparkles,
   ArrowUpRight,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';

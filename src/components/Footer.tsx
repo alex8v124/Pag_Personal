@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
-import { Github, Linkedin, Mail, Heart, Sparkles, ArrowUp, Code2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, ArrowUp, Code2 } from 'lucide-react';
 import { Button } from './ui/button';
 
 export default function Footer() {

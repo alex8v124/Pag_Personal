@@ -9,7 +9,6 @@ import {
   Calendar,
   CheckCircle2,
   Server,
-  Sparkles,
   Bot,
   Gamepad2,
   ArrowUpRight,

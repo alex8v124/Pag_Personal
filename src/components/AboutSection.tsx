@@ -6,7 +6,7 @@ import {
   User,
   ShieldCheck,
   Server,
-  Sparkles,
+  Zap,
   Award,
   Globe2,
   CheckCircle2,
@@ -21,7 +21,7 @@ import Card3D from '@/components/3d/Card3D';
 export default function AboutSection() {
   const highlights = [
     {
-      icon: Sparkles,
+      icon: Zap,
       title: 'CTO & Co-Founder en Nodux',
       description:
         'Lidero la arquitectura de software, suites de IA (PhyData AI, Commercial OS, Despacho Transaccional) y el despliegue de 4 plataformas B2B en producción.',
@@ -80,7 +80,7 @@ export default function AboutSection() {
                 <div>
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-9 h-9 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400">
-                      <Sparkles className="w-5 h-5" />
+                      <Zap className="w-5 h-5" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold font-headline text-zinc-100">

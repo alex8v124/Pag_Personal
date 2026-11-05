@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import {
   Building2,
-  Sparkles,
   Database,
   MessageSquare,
   TrendingUp,
@@ -126,7 +125,7 @@ export default function NoduxSection() {
                 data-cursor-label="Web Nodux"
               >
                 <a
-                  href="https://nicolas-links-chi.vercel.app/"
+                  href="https://nx-profiler-nine.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

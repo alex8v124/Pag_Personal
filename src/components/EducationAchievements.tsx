@@ -8,7 +8,7 @@ import {
   Globe2,
   CheckCircle2,
   Calendar,
-  Sparkles,
+  Zap,
   BookOpen,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -31,7 +31,7 @@ export default function EducationAchievements() {
       category: 'Liderazgo & Talento',
       description:
         'Seleccionado entre los mejores expedientes académicos de la facultad para programas de formación especializada, aceleración profesional y liderazgo tecnológico.',
-      icon: Sparkles,
+      icon: Zap,
       badge: 'Generación TOP',
       color: 'text-emerald-400',
     },

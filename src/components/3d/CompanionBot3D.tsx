@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import {
   Bot,
-  Sparkles,
   MessageSquare,
   X,
   Send,
@@ -546,7 +545,7 @@ export default function CompanionBot3D() {
                 >
                   {!isUser && (
                     <div className="w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <Sparkles className="w-3 h-3" />
+                      <Bot className="w-3 h-3" />
                     </div>
                   )}
 
@@ -639,7 +638,7 @@ export default function CompanionBot3D() {
             data-cursor-label="Abrir Chat"
             data-magnetic="true"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span className="text-xs font-mono font-medium text-zinc-200">
               ¿Dudas sobre Juan? <strong className="text-amber-300">¡Chatea conmigo!</strong>
             </span>

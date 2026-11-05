@@ -8,11 +8,12 @@ import {
   Layers,
   Database,
   Cloud,
-  Sparkles,
+  Zap,
   Search,
   CheckCircle2,
   Check,
   ShieldCheck,
+  Workflow,
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
@@ -30,7 +31,7 @@ export default function SkillsSection() {
       case 3:
         return Cloud;
       case 4:
-        return Sparkles;
+        return Zap;
       default:
         return Terminal;
     }
@@ -108,7 +109,7 @@ export default function SkillsSection() {
                             : 'bg-zinc-800/60 border border-zinc-700/60 text-zinc-300 hover:border-zinc-500'
                         }`}
                       >
-                        {skill.highlight && <Sparkles className="w-3 h-3 text-amber-400" />}
+                        {skill.highlight && <Zap className="w-3 h-3 text-amber-400" />}
                         <span>{skill.name}</span>
                       </span>
                     ))}

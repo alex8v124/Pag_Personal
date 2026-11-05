@@ -13,7 +13,7 @@ import {
   Check,
   MessageSquare,
   Clock,
-  Sparkles,
+  Zap,
   ArrowUpRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -108,7 +108,7 @@ export default function ContactSection() {
             {/* Direct Cards */}
             <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-6 backdrop-blur-md shadow-xl">
               <h3 className="text-lg font-bold font-headline text-zinc-100 mb-4 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-amber-400" /> Canales Inmediatos
+                <Zap className="w-4 h-4 text-amber-400" /> Canales Inmediatos
               </h3>
 
               <div className="space-y-4">

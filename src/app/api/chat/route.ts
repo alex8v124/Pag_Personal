@@ -9,12 +9,11 @@ Datos clave de Juan Alexander:
 - Podios & Hackathons:
   * 3.er Puesto Nacional en IAthon AWS & Kiro (ESAN x Fundación Romero) con el sistema Kiro RestQube (AWS Lambda, DynamoDB Single-Table, Bedrock Claude 3 Haiku y optimizador QUBO). Superaron a 40 escuadras (240 competidores). Demo: https://kirorestqube.vercel.app/
   * Clasificado Oficial en IEEE / IBM Quantum Hackathon Perú (PUCP x UTEC) con Nodux Quantum: resolución de problema cuadrático QAP10 de 4,150 variables con Q-LNS y QAOA en Qiskit Aer, logrando 27.04% de reducción de costo. Demo: https://nodux-quantum.vercel.app/
-  * 1.er Puesto (10/10) Challenge Internacional #AIforImpact (HP & JA Americas).
 - Ecosistema Nodux (CTO):
   * PhyData AI: Suite de calidad de datos, diagnóstico y normalización semántica de hasta 3,000 SKUs con validación Human-in-the-Loop.
   * Nodux AI & Despacho: Automatización de cotizaciones por WhatsApp reducidas de 4 min a 10 seg (validado en Produce - Aprende a Emprender).
   * Commercial OS: CRM B2B con prospección inteligente (Gemini), pipeline de 7 fases y simulador FinOps de ROI (+418% / 69d payback).
-  * 4 Plataformas productivas: E-Commerce & Logística (Angular 17 / Spring Boot), Nodux Educa LMS (Next.js), Portal Automotriz NX-7 PHEV (3D) y Web Corporativa B2B.
+  * 4 Plataformas productivas: E-Commerce & Logística (Angular 17 / Spring Boot), Nodux Educa LMS (Next.js), Portal Automotriz NX-7 PHEV (3D) y Web Corporativa B2B. Portal Oficial: https://nx-profiler-nine.vercel.app/
 - Experiencia Bancaria: ZyTrust SA - modernización de microservicios transaccionales con Java 21, Spring Boot y Apache Kafka, reduciendo tiempos de respuesta en +35%.
 - Formación: UTP (9.º ciclo, Décimo Superior / Top 10%), Inglés C1 Avanzado.
 - Contacto y Disponibilidad: Disponible de inmediato. WhatsApp: +51 906 442 235 / +51 924 934 329, Correo: alex.04.antay@gmail.com / alex8v124@gmail.com, LinkedIn: linkedin.com/in/juanalexmiranda/, GitHub: github.com/alex8v124.
@@ -32,7 +31,7 @@ function getSmartFallback(query: string): string {
   const q = query.toLowerCase();
 
   if (q.includes('nodux') || q.includes('cto') || q.includes('founder') || q.includes('phydata') || q.includes('commercial')) {
-    return `Juan Alexander es **CTO & Co-Founder en NODUX**, donde lidera la arquitectura técnica de suites de IA como **PhyData AI** (higiene y normalización de hasta 3,000 SKUs), **Nodux AI Despacho** (cotizaciones en 10s validadas por PRODUCE) y **Commercial OS** (CRM B2B con motor Gemini y FinOps). Puedes explorar el ecosistema en [Nodux](https://nicolas-links-chi.vercel.app/).`;
+    return `Juan Alexander es **CTO & Co-Founder en NODUX**, donde lidera la arquitectura técnica de suites de IA como **PhyData AI** (higiene y normalización de hasta 3,000 SKUs), **Nodux AI Despacho** (cotizaciones en 10s validadas por PRODUCE) y **Commercial OS** (CRM B2B con motor Gemini y FinOps). Puedes explorar el portal oficial en [Nodux](https://nx-profiler-nine.vercel.app/).`;
   }
 
   if (q.includes('hackathon') || q.includes('podio') || q.includes('kiro') || q.includes('quantum') || q.includes('cuantica') || q.includes('aws')) {
