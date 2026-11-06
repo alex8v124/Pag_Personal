@@ -58,6 +58,7 @@ export default function InteractiveTerminal() {
           <div className="space-y-1 text-xs font-mono text-zinc-300">
             <p className="text-amber-400 font-bold">Comandos disponibles:</p>
             <p><span className="text-amber-300 font-bold">whoami</span>     : Resumen profesional y perfil</p>
+            <p><span className="text-amber-300 font-bold">cv</span>         : Descargar Currículum Vitae oficial (PDF)</p>
             <p><span className="text-amber-300 font-bold">stack</span>      : Tecnologías principales (Backend, Frontend, DB)</p>
             <p><span className="text-amber-300 font-bold">projects</span>   : Lista de proyectos y repositorios en GitHub</p>
             <p><span className="text-amber-300 font-bold">contact</span>    : Enlaces de correo, teléfono, WhatsApp y LinkedIn</p>
@@ -172,6 +173,28 @@ export default function InteractiveTerminal() {
             <p className="text-zinc-400">
               Configuración en el proyecto: Consulta el archivo <span className="text-zinc-200 font-bold">.mcp/higgsfield-mcp.json</span> y la guía completa en <span className="text-zinc-200 font-bold">docs/HIGGSFIELD_MCP_GUIDE.md</span>.
             </p>
+          </div>
+        );
+        break;
+
+      case 'cv':
+      case 'resume':
+      case 'curriculum':
+        output = (
+          <div className="space-y-2 text-xs font-mono text-zinc-300">
+            <p className="text-amber-400 font-bold">📄 Currículum Vitae Oficial (PDF):</p>
+            <p className="text-zinc-300">
+              Documento: <strong className="text-white">CV - JUAN MIRANDA.pdf</strong> (Ingeniería de Sistemas, CTO Nodux, Podios Nacionales).
+            </p>
+            <div>
+              <a
+                href="/cv.pdf"
+                download="CV - JUAN MIRANDA.pdf"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-400 text-zinc-950 font-bold hover:bg-amber-300 transition-colors"
+              >
+                📥 Descargar CV (PDF)
+              </a>
+            </div>
           </div>
         );
         break;

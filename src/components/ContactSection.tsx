@@ -15,6 +15,7 @@ import {
   Clock,
   Zap,
   ArrowUpRight,
+  FileDown,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -223,6 +224,23 @@ export default function ContactSection() {
                   <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer">
                     <Github className="w-4 h-4" />
                     GitHub
+                  </a>
+                </Button>
+              </div>
+
+              {/* CV Download button */}
+              <div className="mt-3">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  data-magnetic="true"
+                  data-cursor-label="Descargar"
+                  className="w-full bg-amber-400/10 border-amber-400/30 hover:border-amber-400 hover:bg-amber-400/20 text-amber-300 text-xs gap-2 py-2"
+                >
+                  <a href="/cv.pdf" download="CV - JUAN MIRANDA.pdf">
+                    <FileDown className="w-4 h-4 text-amber-400" />
+                    <span>Descargar Currículum Vitae (PDF)</span>
                   </a>
                 </Button>
               </div>

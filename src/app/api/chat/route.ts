@@ -15,6 +15,7 @@ Datos clave de Juan Alexander:
   * Commercial OS: CRM B2B con prospección inteligente (Gemini), pipeline de 7 fases y simulador FinOps de ROI (+418% / 69d payback).
   * 4 Plataformas productivas: E-Commerce & Logística (Angular 17 / Spring Boot), Nodux Educa LMS (Next.js), Portal Automotriz NX-7 PHEV (3D) y Web Corporativa B2B. Portal Oficial: https://nx-profiler-nine.vercel.app/
 - Experiencia Bancaria: ZyTrust SA - modernización de microservicios transaccionales con Java 21, Spring Boot y Apache Kafka, reduciendo tiempos de respuesta en +35%.
+- Currículum Vitae (CV / Resume): Disponible para descarga directa en PDF en /cv.pdf (archivo "CV - JUAN MIRANDA.pdf"). Si te piden su CV o currículum, proporciona el enlace [Descargar CV (PDF)](/cv.pdf).
 - Formación: UTP (9.º ciclo, Décimo Superior / Top 10%), Inglés C1 Avanzado.
 - Contacto y Disponibilidad: Disponible de inmediato. WhatsApp: +51 906 442 235 / +51 924 934 329, Correo: alex.04.antay@gmail.com / alex8v124@gmail.com, LinkedIn: linkedin.com/in/juanalexmiranda/, GitHub: github.com/alex8v124.
 
@@ -29,6 +30,10 @@ Reglas de respuesta:
 // Local instant smart fallback if external API is unreachable or times out
 function getSmartFallback(query: string): string {
   const q = query.toLowerCase();
+
+  if (q.includes('cv') || q.includes('curriculum') || q.includes('resume') || q.includes('hoja de vida')) {
+    return `Puedes descargar el currículum actualizado de Juan Alexander directamente aquí: 📄 [Descargar CV - JUAN MIRANDA.pdf](/cv.pdf).`;
+  }
 
   if (q.includes('nodux') || q.includes('cto') || q.includes('founder') || q.includes('phydata') || q.includes('commercial')) {
     return `Juan Alexander es **CTO & Co-Founder en NODUX**, donde lidera la arquitectura técnica de suites de IA como **PhyData AI** (higiene y normalización de hasta 3,000 SKUs), **Nodux AI Despacho** (cotizaciones en 10s validadas por PRODUCE) y **Commercial OS** (CRM B2B con motor Gemini y FinOps). Puedes explorar el portal oficial en [Nodux](https://nx-profiler-nine.vercel.app/).`;

@@ -121,7 +121,7 @@ export default function Navbar() {
             data-cursor-label="Descargar"
             className="hidden sm:inline-flex border-zinc-700 hover:border-amber-400/60 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 hover:text-amber-300 text-xs gap-1.5"
           >
-            <a href="/cv.pdf" download="CV_Juan_Alexander_Miranda_Quispe.pdf">
+            <a href="/cv.pdf" download="CV - JUAN MIRANDA.pdf">
               <FileDown className="w-3.5 h-3.5" />
               <span>CV (PDF)</span>
             </a>
@@ -169,8 +169,8 @@ export default function Navbar() {
             <div className="pt-4 border-t border-zinc-800 flex flex-col gap-2">
               <a
                 href="/cv.pdf"
-                download
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs font-medium text-zinc-200"
+                download="CV - JUAN MIRANDA.pdf"
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs font-medium text-zinc-200 hover:text-amber-300 transition-colors"
               >
                 <FileDown className="w-4 h-4 text-amber-400" />
                 Descargar CV (PDF)

@@ -10,6 +10,7 @@ import {
   Check,
   ArrowDown,
   Layers,
+  FileDown,
   Cpu,
   Server,
   Code2,
@@ -119,6 +120,20 @@ export default function HeroSection() {
                 <a href="#proyectos">
                   <Layers className="w-4 h-4" />
                   Explorar Proyectos
+                </a>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                data-magnetic="true"
+                data-cursor-label="Descargar"
+                className="border-amber-400/40 hover:border-amber-400 bg-amber-400/5 hover:bg-amber-400/15 text-amber-300 text-sm gap-2"
+              >
+                <a href="/cv.pdf" download="CV - JUAN MIRANDA.pdf">
+                  <FileDown className="w-4 h-4" />
+                  Descargar CV
                 </a>
               </Button>
 

@@ -55,6 +55,7 @@ export const PERSONAL_INFO = {
   github: "https://github.com/alex8v124",
   linkedin: "https://www.linkedin.com/in/juanalexmiranda/",
   portfolioUrl: "https://pag-personal-five.vercel.app/",
+  cvUrl: "/cv.pdf",
   stats: [
     { value: "CTO", label: "Co-Founder en Nodux" },
     { value: "Top 3", label: "Podio Nacional AWS & Kiro" },
